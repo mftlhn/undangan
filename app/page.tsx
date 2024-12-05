@@ -100,7 +100,7 @@ export default function Home() {
     //   </footer> */}
     // </div>
     <div className="flex h-fit w-full justify-center px-1 py-1">
-      <video autoPlay loop controls>
+      <video autoPlay loop controls muted>
         <source src="/video.mp4" />
       </video>
     </div>
