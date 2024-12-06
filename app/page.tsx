@@ -37,7 +37,7 @@ export default function Home() {
     <>
       {/* Modal Fullscreen */}
       {showModal && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-70 z-10 flex justify-center items-center">
+        <div className="fixed h-full w-full bg-black bg-opacity-70 z-10 flex justify-center items-center">
           <div className="bg-white rounded-lg p-6 shadow-lg text-center">
             <h1 className="text-xl font-bold mb-4">Selamat Datang!</h1>
             <p className="text-gray-600 mb-4">Tekan tombol untuk membuka undangan.</p>
@@ -67,6 +67,27 @@ export default function Home() {
         >
           {isPlaying ? <FaPause /> : <FaPlay />}
         </button>
+      </div>
+      <div className="flex flex-col px-1 my-5">
+        <div>
+          <label htmlFor="name" className="mb-5">Nama Undangan</label>
+          <input type="text" name="name" className="w-full py-2 px-2 focus:outline-rose-400 rounded text-gray-800 border border-gray-300" />
+        </div>
+        <div className="mt-5">
+          <label htmlFor="kehadiran" className="mb-5">Kehadiran</label>
+          <select name="kehadiran" id="kehadiran" className="w-full py-2 px-2 focus:outline-rose-400 rounded text-gray-800 border border-gray-300">
+            <option selected disabled>- Pilih Kehadiran -</option>
+            <option value="hadir">Hadir</option>
+            <option value="tidak_hadir">Tidak Hadir</option>
+          </select>
+        </div>
+        <div className="mt-5">
+          <label htmlFor="ucapan">Ucapan untuk yang berbahagia</label>
+          <textarea name="ucapan" id="ucapan" className="w-full py-2 px-2 focus:outline-rose-400 rounded text-gray-800 border border-gray-300"></textarea>
+        </div>
+        <div className="mt-5">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 w-full rounded">Kirim</button>
+        </div>
       </div>
     </>
   );
